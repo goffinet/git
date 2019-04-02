@@ -1,0 +1,35 @@
+{
+    "title": "Apprendre Git",
+    "description": "Apprendre Git",
+    "author": "François-Emmanuel Goffinet, goffinet@goffinet.eu",
+    "language": "fr",
+    "plugins": [
+        "atoc",
+        "-lunr", "-search", "search-plus",
+        "hints",
+        "livereload",
+        "katex",
+        "google-drive-video",
+        "image-captions"
+    ],
+    "pdf": {
+        "margin": {
+            "left": 56,
+            "right": 56,
+            "top": 56,
+            "bottom": 56
+        },
+        "pageNumbers": true,
+        "fontSize": 12,
+        "fontFamily": "Roboto",
+        "paperSize": "a4",
+        "headerTemplate": "_TITLE_ - _SECTION_",
+        "footerTemplate": "_AUTHOR_ - _PAGENUM_"
+    },
+    "pluginsConfig": {
+        "image-captions": {
+            "caption": "Figure _BOOK_IMAGE_NUMBER_ : _CAPTION_"
+
+        }
+    }
+}

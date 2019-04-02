@@ -1,0 +1,4 @@
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://apprendre-git.netlify.com/* https://git.goffinet.org/:splat 301!

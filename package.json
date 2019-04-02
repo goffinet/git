@@ -1,0 +1,31 @@
+{
+  "name": "git",
+  "version": "1.0.0",
+  "description": "_Notes de formation_",
+  "main": "index.js",
+  "dependencies": {
+    "gitbook-plugin-google-drive-video": "^1.0.4",
+    "gitbook-plugin-atoc": "^1.0.3",
+    "gitbook-plugin-image-captions": "^3.1.0",
+    "gitbook-plugin-hints": "^1.0.2",
+    "gitbook-plugin-katex": "^1.1.4",
+    "gitbook-plugin-search-plus": "^1.0.3",
+    "gitbook-plugin-livereload": "^0.0.1"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goffinet/git.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goffinet/git/issues"
+  },
+  "homepage": "https://github.com/goffinet/git#readme"
+}

@@ -1,0 +1,7 @@
+drafts/
+_book/
+node_modules/
+.gitlab-ci.yml
+*.pdf
+*.mobi
+*.epub
