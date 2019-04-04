@@ -18,3 +18,7 @@
 * [A. Git dans d’autres environnements](11-annexe-a-git-dans-autres-environnements.md)
 * [B. Embarquer Git dans vos applications](12-annexe-b-embarquer-git-applications.md)
 * [C. Commandes Git](13-annexe-c-commandes-git.md)
+
+### GITLAB
+
+* [Notes sur Gitlab-CI](20-gilab-ci.md)
