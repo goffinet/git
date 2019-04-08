@@ -82,6 +82,10 @@ git push
 
 Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
+![Pipeline Gitlab pour gitbook](/images/pipeline-gitlab-gitbook-publication.jpg)
+
+Fichier `gitlab-ci.yml` :
+
 ```yaml
 # This pipeline run three stages Test, Build and Deploy
 stages:
@@ -202,11 +206,11 @@ pages:
     - master
 ```
 
-![Pipeline Gitlab pour gitbook](/images/pipeline-gitlab-gitbook-publication.jpg)
-
 ## 4. CI/CD Jekyll
 
 Référentiel à importer : [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
+
+Fichier `gitlab-ci.yml` :
 
 ```yaml
 image: ruby:2.3
@@ -232,6 +236,8 @@ pages:
 ## 5. CI/CD Mkdocs
 
 Référentiel à importer : [mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
+
+Fichier `gitlab-ci.yml` :
 
 ```yaml
 image: python:3.6-alpine
