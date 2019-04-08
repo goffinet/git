@@ -94,12 +94,14 @@ Créer un dépôt sur Gilab et le cloner localement.
 
 Importer une clé SSH.
 
-Image Docker maven
+Image Docker maven.
 
 Exemple CI/CD avec Maven, lecture de l'exemple et application https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html.
 
 - test
 - build
 - deploy
+
+Variables cachées.
 
 Gitlab-runner local.
