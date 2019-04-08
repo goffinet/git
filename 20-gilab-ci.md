@@ -14,7 +14,7 @@
 
 [GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
 
-### Essai local
+### Essai local avec un exemple Gitlab
 
 ```bash
 yum -y install git
