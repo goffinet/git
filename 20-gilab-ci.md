@@ -2,15 +2,17 @@
 
 <!-- toc -->
 
-## Introduction à DevOps et à Gitlab-Ci
+## 1. Introduction à DevOps et à Gitlab-Ci
 
 [https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html)
 
-## Projet de départ
+## 2. Projet de départ
 
 [Creating and Tweaking GitLab CI/CD for GitLab Pages | GitLab](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html)
 
 [Job spécial Pages et dossier public/](https://docs.gitlab.com/ee/ci/yaml/#pages)
+
+[GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
 
 ### Essai local
 
@@ -76,19 +78,142 @@ pages:
 git push
 ```
 
-## Projets Gitlab Page
-
-[GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
-
-[Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
-
-[mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
+## 3. CI/CD Gitbook
 
 [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
+```yaml
+# This pipeline run three stages Test, Build and Deploy
+stages:
+  - test
+  - build
+  - deploy
+
+image: goffinet/gitbook:latest
+
+# the 'gitbook' job will test the gitbook tools
+gitbook:
+  stage: test
+  image: registry.gitlab.com/goffinet/gitbook-gitlab:latest
+  script:
+    - 'echo "node version: $(node -v)"'
+    - gitbook -V
+    - calibre --version
+  allow_failure: false
+
+# the 'lint' job will test the markdown syntax
+lint:
+  stage: test
+  script:
+    - 'echo "node version: $(node -v)"'
+    - echo "markdownlint version:" $(markdownlint -V)
+    - markdownlint --config ./markdownlint.json README.md
+    - markdownlint --config ./markdownlint.json *.md
+  allow_failure: true
+
+# the 'html' job will build your document in html format
+html:
+  stage: build
+  dependencies:
+    - gitbook
+    - lint
+  script:
+    - gitbook install # add any requested plugins in book.json
+    - gitbook build . book # html build
+  artifacts:
+    paths:
+      - book
+    expire_in: 1 day
+  only:
+    - master # this job will affect only the 'master' branch the 'html' job will build your document in pdf format
+  allow_failure: false
+
+# the 'pdf' job will build your document in pdf format
+pdf:
+  stage: build
+  dependencies:
+    - gitbook
+    - lint
+  before_script:
+    - mkdir ebooks
+  script:
+    - gitbook install # add any requested plugins in book.json
+    - gitbook pdf . ebooks/${CI_PROJECT_NAME}.pdf # pdf build
+  artifacts:
+    paths:
+      - ebooks/${CI_PROJECT_NAME}.pdf
+    expire_in: 1 day
+  only:
+    - master # this job will affect only the 'master' branch the 'pdf' job will build your document in pdf format
+
+# the 'epub' job will build your document in epub format
+epub:
+  stage: build
+  dependencies:
+    - gitbook
+    - lint
+  before_script:
+    - mkdir ebooks
+  script:
+    - gitbook install # add any requested plugins in book.json
+    - gitbook epub . ebooks/${CI_PROJECT_NAME}.epub # epub build
+  artifacts:
+    paths:
+      - ebooks/${CI_PROJECT_NAME}.epub
+    expire_in: 1 day
+  only:
+    - master # this job will affect only the 'master' branch
+
+# the 'mobi' job will build your document in mobi format
+mobi:
+  stage: build
+  dependencies:
+    - gitbook
+    - lint
+  before_script:
+    - mkdir ebooks
+  script:
+    - gitbook install # add any requested plugins in book.json
+    - gitbook mobi . ebooks/${CI_PROJECT_NAME}.mobi # mobi build
+  artifacts:
+    paths:
+      - ebooks/${CI_PROJECT_NAME}.mobi
+    expire_in: 1 day
+  only:
+    - master # this job will affect only the 'master' branch
+
+# the 'pages' job will deploy your site to your gitlab pages service
+pages:
+  stage: deploy
+  dependencies:
+    - html
+    - pdf
+    - mobi
+    - epub # We want to specify dependencies in an explicit way, to avoid confusion if there are different build jobs
+  script:
+    - mkdir .public
+    - cp -r book/* .public
+    - cp -r ebooks/* .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+```
+
 ![Pipeline Gitlab pour gitbook](/images/pipeline-gitlab-gitbook-publication.jpg)
 
-## Maven et Apache Tomcat
+## 4. CI/CD Jekyll
+
+[Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
+
+## 5. CI/CD Mkdocs
+
+[mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
+
+
+## 6. CI/CD Maven - Apache Tomcat
 
 https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/
 
