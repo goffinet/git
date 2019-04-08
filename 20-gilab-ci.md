@@ -4,7 +4,7 @@
 
 ## Introduction à DevOps et à Gitlab-Ci
 
-
+[https://docs.gitlab.com/ee/ci/README.html](https://docs.gitlab.com/ee/ci/README.html)
 
 ## Projet de départ
 
@@ -90,13 +90,15 @@ git push
 
 https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/
 
+Exemple CI/CD avec Maven, lecture de l'exemple et application https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html.
+
 Créer un dépôt sur Gilab et le cloner localement.
 
 Importer une clé SSH.
 
 Image Docker maven.
 
-Exemple CI/CD avec Maven, lecture de l'exemple et application https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html.
+Pipeline :
 
 - test
 - build
