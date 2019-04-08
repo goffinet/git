@@ -8,6 +8,8 @@
 
 [Creating and Tweaking GitLab CI/CD for GitLab Pages | GitLab](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html)
 
+[Job spécial Pages et dossier public/](https://docs.gitlab.com/ee/ci/yaml/#pages)
+
 ### Essai local
 
 ```bash
@@ -72,7 +74,7 @@ pages:
 git push
 ```
 
-## Projet Gitlab Page
+## Projets Gitlab Page
 
 [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
 
