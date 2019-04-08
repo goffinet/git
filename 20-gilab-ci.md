@@ -80,7 +80,7 @@ git push
 
 ## 3. CI/CD Gitbook
 
-[Gitbook Publication](https://github.com/goffinet/gitbook-publication)
+Référentiel à importer : [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
 ```yaml
 # This pipeline run three stages Test, Build and Deploy
@@ -206,12 +206,49 @@ pages:
 
 ## 4. CI/CD Jekyll
 
-[Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
+Référentiel à importer : [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
+
+```yaml
+image: ruby:2.3
+
+variables:
+  JEKYLL_ENV: production
+  LC_ALL: C.UTF-8
+
+before_script:
+  - bundle install
+
+pages:
+  stage: deploy
+  script:
+  - bundle exec jekyll build -d public
+  artifacts:
+    paths:
+    - public
+  only:
+  - gitlab
+```
 
 ## 5. CI/CD Mkdocs
 
-[mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
+Référentiel à importer : [mkdocs-material-boilerplate](https://github.com/goffinet/mkdocs-material-boilerplate)
 
+```yaml
+image: python:3.6-alpine
+
+before_script:
+  - pip install --upgrade pip && pip install -r requirements.txt
+
+pages:
+  script:
+    - mkdocs build
+    - mv site public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+```
 
 ## 6. CI/CD Maven - Apache Tomcat
 
@@ -229,8 +266,10 @@ Pipeline :
 
 - test
 - build
-- deploy
+- deploy : sur un serveur Apache Tomcat
 
 Variables cachées.
 
 Gitlab-runner local.
+
+Averissement Slack.
