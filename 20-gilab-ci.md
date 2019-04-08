@@ -4,7 +4,9 @@
 
 ## Introduction à DevOps et à Gitlab-Ci
 
-## Projet Gitbook de démo
+
+
+## Projet de départ
 
 [Creating and Tweaking GitLab CI/CD for GitLab Pages | GitLab](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_four.html)
 
@@ -75,6 +77,8 @@ git push
 ```
 
 ## Projets Gitlab Page
+
+[GitLab CI/CD Pipeline Configuration Reference](https://docs.gitlab.com/ee/ci/yaml/README.html)
 
 [Jekyll good-clean-read](https://github.com/goffinet/good-clean-read)
 
