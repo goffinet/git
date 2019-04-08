@@ -86,6 +86,8 @@ git push
 
 [Gitbook Publication](https://github.com/goffinet/gitbook-publication)
 
+![Pipeline Gitlab pour gitbook](/images/pipeline-gitlab-gitbook-publication.jpg)
+
 ## Maven et Apache Tomcat
 
 https://docs.gitlab.com/ee/ci/examples/artifactory_and_gitlab/
