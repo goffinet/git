@@ -6,6 +6,13 @@ Source : [https://github.com/goffinet/git](https://github.com/goffinet/git)
 
 Date de fabrication : {{ gitbook.time }}
 
+Téléchargements des supports
+
+* [PDF](https://git.goffinet.org/pdf.html)
+* [MOBI](https://git.goffinet.org/mobi.html)
+* [EPUB](https://git.goffinet.org/epub.html)
+
+
 ## Autres références
 
 * **[Pro Git, le livre original](https://book.git-scm.com/book/fr/v2), [PDF](https://github.com/progit/progit2-fr/releases/download/2.1.32/progit_v2.1.32.pdf)**
