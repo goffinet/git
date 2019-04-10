@@ -9,3 +9,6 @@ Jenkins*
 package.json
 markdownlint.json
 .bookignore
+package-lock.json
+.DS_Store
+_redirects
