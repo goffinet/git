@@ -1,5 +1,4 @@
 node_modules
 .grunt
 /_book/
-package-lock.json
 .DS_Store
