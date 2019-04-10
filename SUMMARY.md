@@ -19,6 +19,8 @@
 * [B. Embarquer Git dans vos applications](12-annexe-b-embarquer-git-applications.md)
 * [C. Commandes Git](13-annexe-c-commandes-git.md)
 
-### GITLAB
+### Ebooks
 
-* [Notes sur Gitlab-CI](20-gilab-ci.md)
+* [PDF](pdf.md)
+* [MOBI](mobi.md)
+* [EPUB](epub.md)

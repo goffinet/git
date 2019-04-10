@@ -10,7 +10,10 @@
         "livereload",
         "katex",
         "google-drive-video",
-        "image-captions"
+        "image-captions",
+        "ga",
+        "sitemap",
+        "redirect"
     ],
     "pdf": {
         "margin": {
@@ -29,7 +32,12 @@
     "pluginsConfig": {
         "image-captions": {
             "caption": "Figure _BOOK_IMAGE_NUMBER_ : _CAPTION_"
-
+        },
+        "ga": {
+            "token": "UA-21733018-16"
+        },
+        "sitemap": {
+            "hostname": "https://git.goffinet.org/"
         }
     }
 }
