@@ -1,6 +1,6 @@
 # Apprendre Git (Pro Git v2)
 
-![Page de guarde](cover_small.jpg)
+![Page de garde](cover_small.jpg)
 
 Source : [https://github.com/goffinet/git](https://github.com/goffinet/git)
 
