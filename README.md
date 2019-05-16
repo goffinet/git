@@ -22,6 +22,10 @@ Téléchargements des supports
 * [Changer d'origine https en ssh](https://help.github.com/articles/changing-a-remote-s-url/)
 * [Git Cheat Sheet from Gitlab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf)
 
+## Exercices pratiques
+
+[Github Learning Lab](https://lab.github.com/courses)
+
 ## Auteurs
 
 Scott Chacon
